@@ -12,11 +12,6 @@ export const description = 'Commit change to local and remote';
 
 export function builder(yargs){
     return yargs
-        .option('c', {
-            alias: 'casenumber',
-            type: 'number',
-            description: 'Case number'
-        })
         .option('m', {
             alias: 'message',
             type: 'string',
@@ -26,9 +21,7 @@ export function builder(yargs){
 
 export async function handler(args){
     try {
-        const { casenumber, message } = args;
-        const branchName = await getLocalUserBranch(casenumber);
-        const commitCaseNumber = casenumber || +/fb\-(\d+)/gi.exec(branchName)[1];
+        const { message } = args;
 
         let commitMessage = message;
 
@@ -44,7 +37,7 @@ export async function handler(args){
 
         let commands = [
             `git switch ${branchName}`,
-            `git commit -m "BugzId: ${commitCaseNumber} - ${commitMessage}"`,
+            `git commit -m "${commitMessage}"`,
             'git push'
         ];
 
