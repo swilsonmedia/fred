@@ -22,10 +22,10 @@ export function builder(yargs){
             type: 'string',
             description: 'Commit Message'
         })
-        .option('r', {
-            alias: 'remove',
+        .option('k', {
+            alias: 'keep',
             type: 'boolean',
-            description: 'Removes local and remote branches after merge'
+            description: 'Do not delete local and remote branches after merge'
         })
 }
 
@@ -58,7 +58,7 @@ export async function handler(args){
             'git push'
         ];
 
-        if(args.remove){
+        if(!args.keep){
             commands = commands.concat([
                 `git switch ${branchName}`,
                 'git switch master',
