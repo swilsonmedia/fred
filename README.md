@@ -1,4 +1,4 @@
-[Developer ordering coffee](docs/developer.png)
+(Developer ordering coffee)[docs/developer.png]
 
 # fred
 
