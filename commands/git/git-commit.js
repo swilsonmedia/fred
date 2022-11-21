@@ -1,7 +1,6 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import {log, logError, logSuccess} from '../../helpers/log.js';
-import {getLocalUserBranch} from './helpers/branch.js';
 import inquirer from 'inquirer';
 
 const execPromise = promisify(exec);
