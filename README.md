@@ -1,18 +1,26 @@
 ![Developer ordering coffee](./docs/developer.png)
 
-# FRED
+# FRED CLI
 
-Utilities designed to make your day of developing a little better!
+Command line interface tool full of utilities designed to make your day of developing a little better!
 
 
 ### Installation
 
-Clone this repo and cd into the cloned repo's directory.
+Clone this repo and cd into the cloned repo's directory.  Then run:
 
 ```sh
-npm link
+npm install && npm link
 ```
 
+## Usage
 
+Use the `--help` parameter to display the help section for CLI tool or combined with a specific command to get the help section for that command.
+
+```sh
+fred --help
+# or
+fred git --help
+```
 
 

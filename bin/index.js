@@ -2,7 +2,7 @@
 
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers';
-import * as git from '../commands/git.js';
+import * as git from '../commands/git/git.js';
 
 yargs(hideBin(process.argv))
     .scriptName('fred')
