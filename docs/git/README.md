@@ -1,2 +1,6 @@
-# FRED GIT
+# FRED CLI - `GIT` 
+
+
+
+
 
