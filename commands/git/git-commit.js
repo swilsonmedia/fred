@@ -36,7 +36,6 @@ export async function handler(args){
         }
 
         let commands = [
-            `git switch ${branchName}`,
             `git commit -m "${commitMessage}"`,
             'git push'
         ];
@@ -53,7 +52,7 @@ export async function handler(args){
             }
         }
         
-        logSuccess(`Commit made to ${branchName} and remote is complete!`);
+        logSuccess(`Commit made to local and remote branch complete!`);
     } catch (error) {
         logError(error);
         process.exit(1);
