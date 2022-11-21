@@ -18,6 +18,7 @@ fred git
 
 - [Checkout](./checkout)
 - [Cleanup](./cleanup)
+- [Commit](./commit)
 - [Merge](./merge)
 - [Switch](./switch)
 

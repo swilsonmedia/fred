@@ -1,6 +1,6 @@
-## Merge
+## Commit
 
-Merge a case by the case number and adds a commit message.  If run without a casenumber or commit message, you will be prompted for one.
+Commits staged changes a case by the case number and adds a commit message.  If run without a casenumber or commit message, you will be prompted for one.
 
 ### Usage
 
@@ -11,11 +11,10 @@ Options:
   -v, --verbose     Run with verbose logging                           [boolean]
   -c, --casenumber  Case number                                         [number]
   -m, --message     Commit Message                                      [string]
-  -r, --remove      Removes local and remote branches after merge      [boolean]
 ```
 
 ### Example
 
 ```sh
-fred git merge -c 1234 -m "My First Commit Message"
+fred git commit -c 1234 -m "My First Commit Message"
 ```
