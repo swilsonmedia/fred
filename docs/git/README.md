@@ -16,9 +16,9 @@ fred git
 
 ## Available Commands
 
-- [Checkout](./git/checkout)
-- [Cleanup](./git/cleanup)
-- [Merge](./git/merge)
-- [Switch](./git/switch)
+- [Checkout](./checkout)
+- [Cleanup](./cleanup)
+- [Merge](./merge)
+- [Switch](./switch)
 
 
