@@ -34,6 +34,11 @@ function runBranchCommand(command, casenumber, filter){
             )
         ).sort();
 
+        if(!branches.length){
+            reject('No branches exist');
+            return;
+        }
+
         if(isNaN(casenumber)){
             console.log('');
             const answer = await inquirer.prompt([{
