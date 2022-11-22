@@ -33,14 +33,29 @@ export async function handler(args){
         const commitCaseNumber = casenumber || +/fb\-(\d+)/gi.exec(branchName)[1];
         let commitMessage = message;
 
+
+
         if(!commitMessage){
             log('');
-            const answer = await inquirer.prompt([{
+            
+            const question = {
                 name: 'message',
                 message: 'Please enter a commit message',
                 type: 'input'
-            }]);
+            };
+            
+            const commitLog = await command(`git log -n 100 --author=$(git config --get user.email) --pretty=oneline | grep -i "bugzid: ${commitCaseNumber}"`);
 
+            if(!!commitLog[0].stdout){
+                const parsedMessage = /bugzid:\s\d+\s\-\s(.*)/gi.exec(commitLog[0].stdout.trim().split('\n')[0]);
+
+                if(parsedMessage.length > 1){
+                    question.default = parsedMessage[1];
+                }
+            }
+            
+            const answer = await inquirer.prompt([question]);
+            
             commitMessage = answer.message;
         }
 
