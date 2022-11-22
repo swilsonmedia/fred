@@ -73,8 +73,6 @@ export async function handler(args){
 
         if(!args.keep){
             commands = commands.concat([
-                `git switch ${branchName}`,
-                'git switch master',
                 `git branch -D ${branchName}`,
                 `git push -d origin ${branchName}`
             ]);
