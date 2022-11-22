@@ -14,6 +14,7 @@ export default async function user(){
         } catch (error) {   
             const key = 'Please enter a username';
 
+            console.log('');
             const answer = await inquirer.prompt([{
                     name: 'username',
                     message: 'Please enter a username',

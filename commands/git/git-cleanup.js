@@ -1,8 +1,6 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import {log, logError, logSuccess} from '../../helpers/log.js';
+import command from '../../helpers/command.js';
+import {logError, logSuccess} from '../../helpers/log.js';
 import {getLocalUserBranch} from './helpers/branch.js';
-const execPromise = promisify(exec);
 
 export const cmd = 'cleanup';
 
@@ -21,24 +19,13 @@ export async function handler(args){
     try {
         const { casenumber } = args;
         const branchName = await getLocalUserBranch(casenumber);
-        const commands = [
+        
+        await command([
             `git switch ${branchName}`,
             'git switch master',
             `git branch -D ${branchName}`,
             `git push -d origin ${branchName}`
-        ];
-
-        for(const command of commands){
-            if(args.verbose){
-                log(`Running command: "${command}"`);
-            }
-            
-            const response = await execPromise(command);    
-
-            if(args.verbose){
-                log(response.stdout);
-            }
-        }
+        ], args.verbose);
         
         logSuccess(`Removed ${branchName}`);
     } catch (error) {

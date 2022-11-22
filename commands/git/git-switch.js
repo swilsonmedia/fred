@@ -1,9 +1,7 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import {log, logError, logSuccess} from '../../helpers/log.js';
+import command from '../../helpers/command.js';
+import {logError, logSuccess} from '../../helpers/log.js';
 import {getBranch} from './helpers/branch.js';
 
-const execPromise = promisify(exec);
 
 export const cmd = 'switch';
 
@@ -23,17 +21,7 @@ export async function handler(args){
     try {
         let branch = await getBranch(casenumber);
 
-        const command = `git switch ${branch}`;
-
-        if(args.verbose){
-            log(`Running command: "${command}"`);
-        }
-        
-        const response = await execPromise(command);    
-
-        if(args.verbose){
-            log(response.stdout);
-        }
+        await command(`git switch ${branch}`, args.verbose);
         
         logSuccess(`Switched to ${branch}`);
     } catch (error) {

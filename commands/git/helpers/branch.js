@@ -35,6 +35,7 @@ function runBranchCommand(command, casenumber, filter){
         ).sort();
 
         if(isNaN(casenumber)){
+            console.log('');
             const answer = await inquirer.prompt([{
                 name: 'branch',
                 message: 'Select the branch that you want to switch to',

@@ -1,10 +1,7 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
-import {log, logError, logSuccess} from '../../helpers/log.js';
+import { log, logError, logSuccess} from '../../helpers/log.js';
 import {getLocalUserBranch} from './helpers/branch.js';
 import inquirer from 'inquirer';
-
-const execPromise = promisify(exec);
+import command from '../../helpers/command.js';
 
 export const cmd = 'merge';
 
@@ -37,6 +34,7 @@ export async function handler(args){
         let commitMessage = message;
 
         if(!commitMessage){
+            log('');
             const answer = await inquirer.prompt([{
                 name: 'message',
                 message: 'Please enter a commit message',
@@ -67,17 +65,7 @@ export async function handler(args){
             ]);
         }
 
-        for(const command of commands){
-            if(args.verbose){
-                log(`Running command: "${command}"`);
-            }
-            
-            const response = await execPromise(command);    
-
-            if(args.verbose){
-                log(response.stdout);
-            }
-        }
+        await command(commands, args.verbose);
         
         logSuccess(`Merge of ${branchName} is complete!`);
     } catch (error) {

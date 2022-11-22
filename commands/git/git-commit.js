@@ -1,9 +1,6 @@
-import { exec } from 'child_process';
-import { promisify } from 'util';
 import {log, logError, logSuccess} from '../../helpers/log.js';
 import inquirer from 'inquirer';
-
-const execPromise = promisify(exec);
+import command from '../../helpers/command.js';
 
 export const cmd = 'commit';
 
@@ -21,10 +18,36 @@ export function builder(yargs){
 export async function handler(args){
     try {
         const { message } = args;
+        const status = await command('git status');
+        
+        let commitMessage = message;    
 
-        let commitMessage = message;
+        if(/nothing\sto\scommit/gi.test(status[0].stdout)){
+            logError('No changes to commit');
+            process.exit(1);
+        }
+
+        if(/untracked|Changes\snot\sstaged\sfor\scommit/gi.test(status[0].stdout)){
+            log('You have untracked or unstaged changes\n\n')
+
+            const confirm = await inquirer.prompt([{
+                name: 'track',
+                message: 'Do you want to include all changes in this commit?',
+                type: 'confirm'
+            }]);
+
+            if(!confirm.track && !/Changes\sto\sbe\scommitted/gi.test(status[0].stdout)){
+                logError('No staged changes to commit');
+                process.exit(1);
+            }
+
+            if(confirm.track){
+                command('git add .', args.verbose);
+            }
+        }
 
         if(!commitMessage){
+            log('');
             const answer = await inquirer.prompt([{
                 name: 'message',
                 message: 'Please enter a commit message',
@@ -34,22 +57,10 @@ export async function handler(args){
             commitMessage = answer.message;
         }
 
-        let commands = [
+        await command([
             `git commit -m "${commitMessage}"`,
             'git push'
-        ];
-
-        for(const command of commands){
-            if(args.verbose){
-                log(`Running command: "${command}"`);
-            }
-            
-            const response = await execPromise(command);    
-
-            if(args.verbose){
-                log(response.stdout);
-            }
-        }
+        ], args.verbose);
         
         logSuccess(`Commit made to local and remote branch complete!`);
     } catch (error) {
