@@ -10,7 +10,36 @@ export function buildBranchName(username, casenumber){
 }
 
 export function getBranch(casenumber){
-    return runBranchCommand('git branch -a', casenumber, (username, branch) => new RegExp(`${username}|master|releasetags`, 'gi').test(branch));
+    return runBranchCommand('git branch -a', casenumber, (username, branch) => {
+        if(new RegExp(`${username}|master`, 'gi').test(branch)){
+            return true;
+        }
+
+        if(/releasetags/gi.test(branch)){
+            return isReleaseTagInLast45Days(branch);
+        }
+
+        return false;
+    });
+}
+
+function isReleaseTagInLast45Days(branch){
+    return isWithinTimeFrame(diffInDaysFromToday(findDateFromString(branch)));
+}
+
+function isWithinTimeFrame(days){
+    return days < 45;
+}
+
+function findDateFromString(str){
+    return /\d+\/\d+\/\d+/.exec(str)[0]
+}
+
+function diffInDaysFromToday(date){
+    const compare = new Date(date);
+    const today = new Date();
+
+    return (today.getTime() - compare.getTime()) / (1000 * 3600 * 24);
 }
 
 export function getLocalUserBranch(casenumber){

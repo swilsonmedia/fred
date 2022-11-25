@@ -19,7 +19,11 @@ export async function handler(args){
     try {
         const { message } = args;
         const status = await command('git status');
-        
+
+        const currentBranch = await command('git branch --show-current');
+
+        const bugzId = /fb\-(\d+)/gi.exec(currentBranch[0].stdout)[1]
+
         let commitMessage = message;    
 
         if(/nothing\sto\scommit/gi.test(status[0].stdout)){
@@ -55,6 +59,10 @@ export async function handler(args){
             }]);
 
             commitMessage = answer.message;
+        }
+
+        if(!/bugzid/gi.test(commitMessage)){
+            commitMessage = `BugzId: ${bugzId} - ${commitMessage}`;
         }
 
         await command([
