@@ -1,5 +1,5 @@
 import command from '../../helpers/command.js';
-import {logError, logSuccess} from '../../helpers/log.js';
+import {log, logError, logSuccess} from '../../helpers/log.js';
 import {getLocalUserBranch} from './helpers/branch.js';
 
 export const cmd = 'cleanup';
@@ -29,7 +29,8 @@ export async function handler(args){
         
         logSuccess(`Removed ${branchName}`);
     } catch (error) {
-        logError(error);
+        logError('An error occurred:\n');
+        log(error);
         process.exit(1);
     }
 }

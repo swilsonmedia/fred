@@ -1,5 +1,5 @@
 import command from '../../helpers/command.js';
-import {logError, logSuccess} from '../../helpers/log.js';
+import {log, logError, logSuccess} from '../../helpers/log.js';
 import {getBranch} from './helpers/branch.js';
 
 
@@ -25,7 +25,8 @@ export async function handler(args){
         
         logSuccess(`Switched to ${branch}`);
     } catch (error) {
-        logError(error);
+        logError('An error occurred:\n');
+        log(error);
         process.exit(1);
     }
 }

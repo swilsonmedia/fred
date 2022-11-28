@@ -84,7 +84,8 @@ export async function handler(args){
         
         logSuccess(`Merge of ${branchName} is complete!`);
     } catch (error) {
-        logError(error);
+        logError('An error occurred:\n');
+        log(error);
         process.exit(1);
     }
 }

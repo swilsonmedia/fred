@@ -72,7 +72,8 @@ export async function handler(args){
         
         logSuccess(`Commit made to local and remote branch complete!`);
     } catch (error) {
-        logError(error);
+        logError('An error occurred:\n');
+        log(error);
         process.exit(1);
     }
 }
