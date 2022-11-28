@@ -37,6 +37,8 @@ export async function handler(args){
 
         if(!commitMessage){
             log('');
+
+            await command(`git switch ${branchName}`, args.verbose);
             
             const question = {
                 name: 'message',
