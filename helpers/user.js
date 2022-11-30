@@ -12,12 +12,13 @@ export default async function user(){
     
             res(JSON.parse(result).user);
         } catch (error) {   
-            const key = 'Please enter a username';
-
             console.log('');
+            console.log('What username would you want to use for branch naming?\n\nex: /users/swilson/fb-123');
+            console.log('');
+
             const answer = await inquirer.prompt([{
                     name: 'username',
-                    message: 'Please enter a username',
+                    message: 'Enter a username',
                     type: 'input'
                 }]);
             
