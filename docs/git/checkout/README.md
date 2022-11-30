@@ -1,17 +1,7 @@
 ## Checkout
 
-The checkout command condenses a few common GIT commands into a single command.  
+The checkout command reduces a few common GIT commands into a single command.  
 
-This checkout command handles the following for you:
-
-1. `git switch master`
-2. `git pull`
-3. `git checkout -b users/{username}/fb-{casenumber}`
-4. `git push -u origin users/{username}/fb-{casenumber}`
-
-If you do not provide the -c option followed by a case number, you will be prompted for one.
-
-![checkout](./checkout-prompt.png)
 
 ### Usage
 
@@ -28,3 +18,18 @@ Options:
 ```sh
 fred git checkout -c 1234
 ```
+
+### Addition info
+
+This checkout command runs the following:
+
+1. `git switch master`
+2. `git pull`
+3. `git checkout -b users/{username}/fb-{casenumber}`
+4. `git push -u origin users/{username}/fb-{casenumber}`
+
+If you do not provide the -c option followed by a case number, you will be prompted for one.
+
+![checkout](./checkout-prompt.png)
+
+[Back](../README.md) to fred git documentation. 

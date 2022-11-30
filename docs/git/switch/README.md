@@ -1,6 +1,6 @@
 ## Switch
 
-Switch to available local and remote branches. If run without a casenumber, you will be prompted for one.
+Switch to available local and remote branches.
 
 ### Usage
 
@@ -17,3 +17,11 @@ Options:
 ```sh
 fred git switch -c 1234
 ```
+
+### Addition Info
+
+If you do not provide the -c option, you will be provided a list to select from.
+
+![Switch](./switch-select.png)
+
+[Back](../README.md) to fred git documentation.

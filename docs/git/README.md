@@ -24,4 +24,6 @@ fred git
 - [Merge](./merge)
 - [Switch](./switch)
 
+[Back](../README.md) to fred documentation.
+
 
