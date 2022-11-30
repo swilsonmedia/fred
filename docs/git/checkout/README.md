@@ -11,7 +11,7 @@ This checkout command handles the following for you:
 
 If you do not provide the argument -c followed by a case number, you will be prompted for one.
 
-[checkout](./checkout-prompt.png)
+![checkout](./checkout-prompt.png)
 
 ### Usage
 
