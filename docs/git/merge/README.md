@@ -38,6 +38,7 @@ If the -k option is not provided, these commands will also be run to clean up lo
 9.  `git branch -D ${branchName}`,
 10. `git push -d origin ${branchName}`
 
+
 If you do not provide the -c option followed by a case number, you will be provided a list of branches to select from.
 
 ![merge](./merge-select.png)
