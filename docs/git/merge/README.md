@@ -11,7 +11,7 @@ Options:
   -v, --verbose     Run with verbose logging                           [boolean]
   -c, --casenumber  Case number                                         [number]
   -m, --message     Commit Message                                      [string]
-  -k, --keep        Keeps local and remote branches after merge      [boolean]
+  -k, --keep        Keeps local and remote branches after merge        [boolean]
 ```
 
 ### Example
@@ -32,6 +32,11 @@ This merge command runs the following:
 6. `git merge --squash ${branchName}`
 7. `git commit -m "BugzId: ${casenumber} - ${commitMessage}"`
 8. `git push`
+
+If the -k option is not provided, these commands will also be run to clean up local and remote branches.
+
+9.  `git branch -D ${branchName}`,
+10. `git push -d origin ${branchName}`
 
 If you do not provide the -c option followed by a case number, you will be provided a list of branches to select from.
 
