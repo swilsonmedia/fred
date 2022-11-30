@@ -37,7 +37,7 @@ If you do not provide the -c option followed by a case number, you will be provi
 
 ![merge](./merge-select.png)
 
-If you do not provide the -m option followed by a message, you will be prompted for a message.
+If you do not provide the -m option followed by a message, you will be prompted for one.
 
 A nice feature is that the prompt for a message will be populated with the last message used on the merged branch.  You can hit enter to use it or type a new message.
 

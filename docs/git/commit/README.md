@@ -25,7 +25,7 @@ This commit command runs the following:
 1. `git commit -m "${commitMessage}"`
 2. `git push`
 
-If you do not provide the -m option followed by a message, you will be prompted for a message.
+If you do not provide the -m option followed by a message, you will be prompted for one.
 
 ![commit](./commit-prompt.png)
 
