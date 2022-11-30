@@ -1,6 +1,16 @@
 ## Cleanup
 
-Deletes local and remote branches by the case number. If run without a casenumber, you will be prompted for one.
+The cleanup command condenses a few common GIT commands into a single command.  
+
+This cleanup command handles the following for you:
+
+1. `git switch master`
+2. `git branch -D ${branchName}`
+3. `git push -d origin ${branchName}`
+
+If you do not provide the -c option followed by a case number, you will be provided a list of local branches to select. Use your up/down arrows to select the correct branch and hit enter to run the cleanup.
+
+![cleanup](./cleanup-select.png)
 
 ### Usage
 

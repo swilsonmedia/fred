@@ -1,6 +1,6 @@
 ## Checkout
 
-The checkout command condenses a few common GIT command steps into a single command.  
+The checkout command condenses a few common GIT commands into a single command.  
 
 This checkout command handles the following for you:
 
@@ -9,7 +9,7 @@ This checkout command handles the following for you:
 3. `git checkout -b users/{username}/fb-{casenumber}`
 4. `git push -u origin users/{username}/fb-{casenumber}`
 
-If you do not provide the argument -c followed by a case number, you will be prompted for one.
+If you do not provide the -c option followed by a case number, you will be prompted for one.
 
 ![checkout](./checkout-prompt.png)
 

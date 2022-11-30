@@ -14,6 +14,8 @@ Options:
 fred git
 ```
 
+![help](./git-help.png)
+
 ## Available Commands
 
 - [Checkout](./checkout)
