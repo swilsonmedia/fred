@@ -1,6 +1,17 @@
 ## Checkout
 
-Creates a new branch by the case number.  If run without a casenumber, you will be prompted for one.
+The checkout command condenses a few common GIT command steps into a single command.  
+
+This checkout command handles the following for you:
+
+1. `git switch master`
+2. `git pull`
+3. `git checkout -b users/{username}/fb-{casenumber}`
+4. `git push -u origin users/{username}/fb-{casenumber}`
+
+If you do not provide the argument -c followed by a case number, you will be prompted for one.
+
+[checkout](./checkout-prompt.png)
 
 ### Usage
 
