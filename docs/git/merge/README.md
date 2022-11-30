@@ -1,6 +1,6 @@
 ## Merge
 
-The merge command reduces a bunch of common GIT commands into a single command.  
+The merge command reduces a bunch of common GIT commands into one.  
 
 ### Usage
 

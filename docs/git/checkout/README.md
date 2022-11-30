@@ -1,6 +1,6 @@
 ## Checkout
 
-The checkout command reduces a few common GIT commands into a single command.  
+The checkout command reduces a few common GIT commands into one.  
 
 
 ### Usage

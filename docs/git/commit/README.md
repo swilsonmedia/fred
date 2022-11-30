@@ -1,6 +1,6 @@
 ## Commit
 
-The commit command reduces a few common GIT commands into a single command.  
+The commit command reduces a few common GIT commands into one.  
 
 ### Usage
 

@@ -1,6 +1,6 @@
 ## Cleanup
 
-The cleanup command reduces a few common GIT commands into a single command.  
+The cleanup command reduces a few common GIT commands into one.  
 
 
 ### Usage
