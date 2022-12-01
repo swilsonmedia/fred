@@ -1,6 +1,6 @@
 ## Merge
 
-Merge a feature branch into master.  This command takes care of **10** commands in one! This command can be preformed from any branch within the repo.   
+Merge a feature branch into master.  This command takes care of **10** commands in one! Merge can be preformed from any branch within the repo.   
 
 ### Usage
 
