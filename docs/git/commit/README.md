@@ -1,6 +1,6 @@
 ## Commit
 
-The `commit` alias concatinates `git commit` and `git push` into one command.  
+Commit concatinates `git commit` and `git push` into one command.  
 
 ### Usage
 
@@ -20,7 +20,7 @@ fred git commit -m "My First Commit Message"
 
 ### Additional info
 
-This commit command runs the following:
+Commit runs the following:
 
 1. `git commit -m "${commitMessage}"`
 2. `git push`

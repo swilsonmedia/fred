@@ -1,6 +1,6 @@
 ## Checkout
 
-The checkout command checks out a new branch while reducing a few common GIT commands into one simple one.
+Checkout out a new branch while reducing a few common GIT commands into one simple one.
 
 
 ### Usage
@@ -21,7 +21,7 @@ fred git checkout -c 1234
 
 ### Additional info
 
-This checkout alias runs the following commands:
+Checkout runs the following commands:
 
 1. `git switch master`
 2. `git pull`

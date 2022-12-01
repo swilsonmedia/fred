@@ -1,6 +1,6 @@
 ## Merge
 
-The merge alias takes care of **10** commands in one! The alias can be preformed from any branch within the repo.   
+Merge a feature branch into master.  This command takes care of **10** commands in one! This command can be preformed from any branch within the repo.   
 
 ### Usage
 
@@ -22,7 +22,7 @@ fred git merge -c 1234 -m "My First Commit Message"
 
 ### Additional info
 
-This merge command runs the following:
+Merge runs the following:
 
 1. `git switch master`
 2. `git pull`
@@ -47,7 +47,7 @@ If you do not provide the -c option followed by a case number, you will be provi
 
 If you do not provide the -m option followed by a message, you will be prompted for one.
 
-A nice feature is that the alias will promt you for a commit message. The prompt will be autofilled with the last commit message used on the merged branch. You can hit enter to use it or type a new message.
+A nice feature is that merge will prompt you for a commit message. The prompt will be autofilled with the last commit message used on the merged branch. You can hit enter to use it or type a new message.
 
 ![merge](./merge-message.png)
 
