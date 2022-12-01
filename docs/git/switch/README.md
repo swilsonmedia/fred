@@ -18,9 +18,9 @@ Options:
 fred git switch -c 1234
 ```
 
-### Addition Info
+### Additional Info
 
-If you do not provide the -c option, you will be provided a list to select from.
+If you do not provide the -c option, you will be provided a list to select from. Use your up/down arrows to select the correct branch and hit enter to run the switch.
 
 ![Switch](./switch-select.png)
 

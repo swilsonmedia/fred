@@ -1,6 +1,8 @@
 ## Cleanup
 
-The cleanup command reduces a few common GIT commands into one.  
+The cleanup command takes care of having to delete branches after you're done with a case. 
+
+**Note:** If you ran the `merge` alias, you <u>don't</u> need to do this.  
 
 
 ### Usage
@@ -19,9 +21,9 @@ Options:
 fred git cleanup -c 1234
 ```
 
-### Addition info
+### Additional info
 
-This cleanup command runs the following:
+This cleanup alias runs the following commands:
 
 1. `git switch master`
 2. `git branch -D ${branchName}`
