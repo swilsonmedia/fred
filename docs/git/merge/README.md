@@ -1,6 +1,6 @@
 ## Merge
 
-The merge command reduces a bunch of common GIT commands into one.  
+The merge alias takes care of **10** commands in one! The alias can be preformed from any branch within the repo.   
 
 ### Usage
 
@@ -20,7 +20,7 @@ Options:
 fred git merge -c 1234 -m "My First Commit Message"
 ```
 
-### Addition info
+### Additional info
 
 This merge command runs the following:
 
@@ -32,12 +32,14 @@ This merge command runs the following:
 6. `git merge --squash ${branchName}`
 7. `git commit -m "BugzId: ${casenumber} - ${commitMessage}"`
 8. `git push`
-
-If the -k option is not provided, these commands will also be run to clean up local and remote branches.
-
 9.  `git branch -D ${branchName}`,
 10. `git push -d origin ${branchName}`
 
+Optionally, if you'd like to merge your case but KEEP your branches at the end, you can skip the branches from being deleted in steps 9 & 10 by adding `-k` into the end of the merge command.
+
+```sh
+fred git merge -k
+```
 
 If you do not provide the -c option followed by a case number, you will be provided a list of branches to select from.
 
@@ -45,7 +47,7 @@ If you do not provide the -c option followed by a case number, you will be provi
 
 If you do not provide the -m option followed by a message, you will be prompted for one.
 
-A nice feature is that the prompt for a message will be populated with the last message used on the merged branch.  You can hit enter to use it or type a new message.
+A nice feature is that the alias will promt you for a commit message. The prompt will be autofilled with the last commit message used on the merged branch. You can hit enter to use it or type a new message.
 
 ![merge](./merge-message.png)
 

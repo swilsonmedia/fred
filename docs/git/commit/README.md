@@ -1,6 +1,6 @@
 ## Commit
 
-The commit command reduces a few common GIT commands into one.  
+The `commit` alias concatinates `git commit` and `git push` into one command.  
 
 ### Usage
 
@@ -18,7 +18,7 @@ Options:
 fred git commit -m "My First Commit Message"
 ```
 
-### Addition info
+### Additional info
 
 This commit command runs the following:
 
