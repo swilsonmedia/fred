@@ -26,4 +26,4 @@ fred git --help
 
 ## Documentation
 
-More detailed documentation for every command can be found in the [docs section](https://github.com/swilsonmedia/fred/tree/main/docs).
+More detailed documentation for every command can be found in the [docs section](./docs/README.md).

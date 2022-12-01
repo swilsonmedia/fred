@@ -2,4 +2,4 @@
 
 ## Available Commands
 
-- [git](./git) - Helpful GIT commands
+- [git](./git/README.md) - Helpful GIT commands

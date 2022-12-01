@@ -18,11 +18,11 @@ fred git
 
 ## Available Commands
 
-- [Checkout](./checkout)
-- [Cleanup](./cleanup)
-- [Commit](./commit)
-- [Merge](./merge)
-- [Switch](./switch)
+- [Checkout](./checkout/README.md)
+- [Cleanup](./cleanup/README.md)
+- [Commit](./commit/README.md)
+- [Merge](./merge/README.md)
+- [Switch](./switch/README.md)
 
 [Back](../README.md) to fred documentation.
 
